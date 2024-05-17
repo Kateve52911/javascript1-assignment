@@ -1,0 +1,79 @@
+/* Buttons */
+.cta,
+.cta_read_more,
+.cta_input_footer,
+.cta-heart,
+.cta_gamespage,
+.cta_pay,
+.cta_login,
+.cta_input,
+.cta_discount,
+.cta-gamepage,
+.cta_heart_gamespage,
+.cta_input_contactpage,
+.cta_login_contactpage {
+    background-color: var(--orange);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+
+
+.cta_input,
+.cta_input_footer,
+.cta_heart_gamespage,
+.cta_login,
+.cta_discount {
+    border-style: none;
+}
+
+.cta_discount {
+    padding: 14px;
+}
+
+.cta_gamespage {
+    width: 60px;
+    display: inline;
+    margin-right: 10%;
+    padding: 10% 15%;
+}
+
+.cta_read_more,
+.cta-heart,
+.cta_input,
+.cta_input_footer,
+.cta_heart_gamespage,
+.cta_input_contactpage {
+    background-color: #3CAAF0;
+}
+
+a.cta_input_footer {
+    padding: 9px;
+}
+
+a.cta_login_contactpage {
+    margin-left: 8%;
+}
+
+a.cta_input_contactpage {
+    margin-left: 6%;
+}
+
+.cta_read_more,
+.cta_heart_gamespage {
+    transition-property: background-color;
+}
+
+.cta_read_more:hover {
+    background-color: var(--orange);
+}
+
+.cta_heart_gamespage:hover {
+    background-color: var(--pinkish);
+}
+
+.cta_input_footer {
+    padding: 5px;
+}

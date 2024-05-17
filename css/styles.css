@@ -1,0 +1,333 @@
+@import "buttons.css";
+@import "fonts.css";
+@import "variables.css";
+
+/* Header & Footer */
+header,
+footer {
+    background-color: var(--head_foot_blue);
+}
+
+header {
+    padding: 2%;
+    text-align: left;
+    position: relative;
+}
+
+.logo_image {
+    background-image: url(../images/GameHub_Logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    min-height: 10vh;
+}
+
+.contact_info_footer {
+    grid-template-rows: 1fr;
+    padding: 2%;
+    margin: 0% 5%;
+}
+
+.text_footer,
+.info_footer {
+    display: inline-grid;
+    margin: 3%;
+    padding-top: 2%;
+}
+
+.newsletter {
+    text-decoration: none;
+    padding-top: 6%;
+}
+
+input.input_newsletter {
+    display: inline-block;
+    padding: 2% 4%;
+    margin: 0% 3%;
+    width: 250px;
+}
+
+/* Topbar */
+.topbar_gamespage,
+.topbar_homepage,
+.topbar_contactpage,
+.topbar_about,
+.h1heading {
+    background-color: var(--pale_blue);
+}
+
+.topbar_homepage,
+.topbar_contactpage,
+.topbar_about {
+    padding: 10px;
+}
+
+.h1heading {
+    padding: 20px;
+    margin: 0% 0% 3% 0%;
+}
+
+.topbar_homepage,
+.topbar_gamespage {
+    padding-bottom: 1%;
+}
+
+nav.links_topbar_gamespage {
+    background-color: var(--pale_blue);
+}
+
+/* Nav */
+nav,
+#menu-checkbox,
+#user-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked~nav,
+.user-icon:checked~nav {
+    display: block;
+}
+
+nav {
+    background: var(--head_foot_blue);
+    position: absolute;
+}
+
+.header_links {
+    float: left;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px 10px 0px;
+}
+
+nav a:hover,
+a.nav_gamespage:hover {
+    text-decoration: underline;
+}
+
+.signup {
+    float: right;
+}
+
+a.nav_gamespage,
+a.game_link {
+    text-decoration: none;
+}
+
+li.nav_gamespage {
+    margin: 0% 6%;
+    padding: 8px 25px;
+}
+
+
+/* Containers for grid and flex*/
+.container_about,
+.container_checkoutsuccess,
+.order_summary,
+.checkout_container,
+.details_checkout,
+.container_grid_checkout,
+.checkout_total,
+.form_contactpage,
+.container_direct_contact,
+.container_homepage,
+.contact_info_footer,
+.delivery-info,
+.container-gamepage,
+.container-games-page {
+    display: grid;
+}
+
+.row1,
+.row2,
+.row3,
+.game,
+.buttons-gamespage,
+.payment_radio,
+.info-gamepage {
+    display: flex;
+}
+
+.contact_info_footer,
+.container_direct_contact,
+.details_checkout,
+.container-games-page {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container_homepage,
+.form_contactpage,
+.checkout_container,
+.container_grid_checkout,
+.checkout_total,
+.container_checkoutsuccess,
+.container_about,
+.container-gamepage {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container-games-page {
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.info-gamepage {
+    flex-direction: column;
+}
+
+
+
+/* Images */
+
+.product-page-image {
+    max-width: 80%;
+}
+
+.games-page-image {
+    max-width: 40%;
+}
+
+/* Games page */
+
+.buttons-gamespage {
+    padding-right: 5%;
+    gap: 2%;
+    flex-direction: row;
+}
+
+.game {
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20%;
+}
+
+.genre-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+}
+
+.h2-title-games-page {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Product page */
+
+.info-gamepage {
+    padding: 5% 2%;
+}
+
+.container-gamepage {
+    margin: 2% 20%;
+}
+
+fieldset.game_page {
+    margin-bottom: 10px;
+    border-style: outset;
+}
+
+.button-boxes-product-page {
+    margin-top: 10px;
+}
+
+.delivery-info {
+    grid-template-columns: 50px 200px;
+    grid-template-rows: 50px;
+    margin: 5% 0%
+}
+
+.delivery-truck {
+    margin-top: 60%;
+}
+
+.game-info {
+    margin-top: 30%;
+}
+
+/* Contact Page */
+.gameimage_contact {
+    max-width: 30%;
+    padding: 0% 32%;
+}
+
+input.contact_input,
+textarea.contact_input,
+input.checkout_page {
+    display: block;
+    margin-bottom: 5%;
+}
+
+input.contact_input,
+textarea.contact_input,
+label.contact_page {
+    margin-left: 30px;
+    width: 350px;
+}
+
+.contact_info {
+    margin: 3% 10%;
+}
+
+#log-in-form,
+#contact-form {
+    background-color: var(--pale_orange);
+    padding: 8% 5%;
+}
+
+.form_contactpage {
+    align-items: baseline;
+    padding: 2% 10%;
+    gap: 3%;
+}
+
+#log-in-form {
+    margin-right: 35%;
+    padding-right: 12%;
+}
+
+#contact-form {
+    padding-left: 12%;
+}
+
+.container_direct_contact {
+    justify-items: center;
+    margin: 2% 12%;
+}
+
+.direct_contact_header {
+    font-weight: lighter;
+    padding-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 0%;
+}
+
+.direct_contact_icons {
+    color: var(--head_foot_blue);
+}
+
+
+/* Media Queries */
+/* Phone */
+@media (min-width: 800px) {
+    nav {
+        display: block;
+        position: static;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+
+    nav a {
+        display: inline-block;
+    }
+}
