@@ -20,7 +20,8 @@ async function getListofGames() {
 
         for (let genre of genres) {
             gamesHTML += `<div class="genre-container">
-            <h2 class="h2-title-games-page">${genre}</h2>`;
+            <h2 class="h2-title-games-page">${genre}</h2>
+            `;
             for (let game of games) {
                 if (game.genre === genre) {
                     gamesHTML += `
@@ -29,8 +30,8 @@ async function getListofGames() {
                                             <img class="games-page-image" src="${game.image.url}" alt = "${game.tile}">
                                             <p>$${game.price}</p>
                                             <div class="buttons-gamespage">
-                                                <a href="product-page.html?id=${game.id}" class="cta_gamespage">View</a> 
-                                                <i class="fa-solid fa-heart heart_icon_gamepage cta_heart_gamespage""></i>
+                                                <a href="product-page.html?id=${game.id}" class="cta-gamespage">View</a> 
+                                                <i class="fa-solid fa-heart heart-icon-gamepage cta-heart_-gamespage""></i>
                                             </div>
                                             
                                             </div>`

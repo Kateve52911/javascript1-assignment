@@ -1,79 +1,76 @@
 /* Buttons */
 .cta,
-.cta_read_more,
-.cta_input_footer,
+.cta-read-more,
+.cta-input-footer,
 .cta-heart,
-.cta_gamespage,
-.cta_pay,
-.cta_login,
-.cta_input,
-.cta_discount,
+.cta-gamespage,
+.cta-pay,
+.cta-login,
+.cta-input,
+.cta-discount,
 .cta-gamepage,
-.cta_heart_gamespage,
-.cta_input_contactpage,
-.cta_login_contactpage {
+.cta-heart-gamespage,
+.cta-input-contactpage,
+.cta-login-contactpage {
     background-color: var(--orange);
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
 }
 
-
-
-
-.cta_input,
-.cta_input_footer,
-.cta_heart_gamespage,
-.cta_login,
-.cta_discount {
+.cta-input,
+.cta-input-footer,
+.cta-heart-gamespage,
+.cta-login,
+.cta-discount {
     border-style: none;
 }
 
-.cta_discount {
+.cta-discount {
     padding: 14px;
 }
 
-.cta_gamespage {
+.cta-gamespage {
     width: 60px;
     display: inline;
     margin-right: 10%;
     padding: 10% 15%;
 }
 
-.cta_read_more,
+.cta-read-more,
 .cta-heart,
-.cta_input,
-.cta_input_footer,
-.cta_heart_gamespage,
-.cta_input_contactpage {
+.cta-input,
+.cta-input-footer,
+.cta-heart-gamespage,
+.cta-input-contactpage {
     background-color: #3CAAF0;
 }
 
-a.cta_input_footer {
+a.cta-input-footer {
     padding: 9px;
 }
 
-a.cta_login_contactpage {
+a.cta-login-contactpage {
     margin-left: 8%;
 }
 
-a.cta_input_contactpage {
+a.cta-input-contactpage {
     margin-left: 6%;
 }
 
-.cta_read_more,
-.cta_heart_gamespage {
+.cta-read-more,
+.cta-heart-gamespage {
     transition-property: background-color;
 }
 
-.cta_read_more:hover {
+.cta-read-more:hover {
     background-color: var(--orange);
 }
 
-.cta_heart_gamespage:hover {
+.cta-heart-gamespage:hover {
     background-color: var(--pinkish);
 }
 
-.cta_input_footer {
+.cta-input-footer {
     padding: 5px;
 }

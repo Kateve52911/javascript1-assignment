@@ -6,20 +6,20 @@ h3 {
 }
 
 p,
-#first_section_text,
+#first-section-text,
 input,
 textarea,
 label,
 input.cardholder,
 #contact-info,
 .newsletter,
-.game_text,
+.game-text,
 nav a,
 nav li,
-a.game_link,
-a.cta_login_contactpage,
-a.cta_input_contactpage,
-.cta_discount,
+a.game-link,
+a.cta-login-contactpage,
+a.cta-input-contactpage,
+.cta-discount,
 .cta {
     font-family: var(--font_family);
 }
@@ -33,75 +33,75 @@ a.cta_input_contactpage,
     padding-top: 3%;
 }
 
-.h2-item_topbar {
+.h2-item-topbar {
     padding: 1% 38%;
 }
 
-.h2-item_topbar,
-.cta_login,
-a.nav_gamespage {
+.h2-item-topbar,
+.cta-login,
+a.nav-gamespage {
     color: var(--black);
 }
 
-.contact_info,
+.contact-info,
 .h1heading,
-a.nav_gamespage,
+a.nav-gamespage,
 input,
 textarea,
 label {
     font-size: larger;
 }
 
-.contact_info {
+.contact-info {
     font-size: x-large;
 }
 
 
-.game_link,
+.game-link,
 .h1heading {
     font-size: xx-large;
 }
 
-#first_section_text,
-#about_info_text {
+#first-section-text,
+#about-info-text {
     font-size: large;
 }
 
-.text_footer,
-.info_footer,
+.text-footer,
+.info-footer,
 .newsletter,
-.payment_radio {
+.payment-radio {
     font-size: small;
 }
 
-.order_confirmed,
-.payment_info,
+.order-confirmed,
+.payment-info,
 input.cardholder,
-a.cta_input_footer,
-li.nav_gamespage {
+a.cta-input-footer,
+li.nav-gamespage {
     font-size: medium;
 }
 
 header,
-.icon_footer,
-.heart_icon_gamepage,
+.icon-footer,
+.heart-icon-gamepage,
 nav a,
 .cta,
-.cta_read_more,
-.cta_input_footer,
+.cta-read-more,
+.cta-input-footer,
 .cta-heart,
-.cta_gamespage,
-.cta_pay,
-.cta_login,
-.cta_input,
-.cta_discount,
-.cta_heart_gamespage,
+.cta-gamespage,
+.ctapay,
+.cta-login,
+.cta-input,
+.cta-discount,
+.cta-heart-gamespage,
 .cta-gamepage,
-#first_section_text,
+#first-section-text,
 footer,
-.icon_user,
-a.game_link,
-a.cta_login_contactpage,
-a.cta_input_contactpage {
+.icon-user,
+a.game-link,
+a.cta-login-contactpage,
+a.cta-input-contactpage {
     color: var(--white);
 }

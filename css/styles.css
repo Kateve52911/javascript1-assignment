@@ -14,7 +14,7 @@ header {
     position: relative;
 }
 
-.logo_image {
+.logo-image {
     background-image: url(../images/GameHub_Logo.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -22,14 +22,14 @@ header {
     min-height: 10vh;
 }
 
-.contact_info_footer {
+.contact-info-footer {
     grid-template-rows: 1fr;
     padding: 2%;
     margin: 0% 5%;
 }
 
-.text_footer,
-.info_footer {
+.text-footer,
+.info-footer {
     display: inline-grid;
     margin: 3%;
     padding-top: 2%;
@@ -40,7 +40,7 @@ header {
     padding-top: 6%;
 }
 
-input.input_newsletter {
+input.input-newsletter {
     display: inline-block;
     padding: 2% 4%;
     margin: 0% 3%;
@@ -48,17 +48,17 @@ input.input_newsletter {
 }
 
 /* Topbar */
-.topbar_gamespage,
-.topbar_homepage,
-.topbar_contactpage,
-.topbar_about,
+.topbar-gamespage,
+.topbar-homepage,
+.topbar-contactpage,
+.topbar-about,
 .h1heading {
     background-color: var(--pale_blue);
 }
 
-.topbar_homepage,
-.topbar_contactpage,
-.topbar_about {
+.topbar-homepage,
+.topbar-contactpage,
+.topbar-about {
     padding: 10px;
 }
 
@@ -67,12 +67,12 @@ input.input_newsletter {
     margin: 0% 0% 3% 0%;
 }
 
-.topbar_homepage,
-.topbar_gamespage {
+.topbar-homepage,
+.topbar-gamespage {
     padding-bottom: 1%;
 }
 
-nav.links_topbar_gamespage {
+nav.links-topbar-gamespage {
     background-color: var(--pale_blue);
 }
 
@@ -93,7 +93,7 @@ nav {
     position: absolute;
 }
 
-.header_links {
+.header-links {
     float: left;
 }
 
@@ -109,7 +109,7 @@ nav li {
 }
 
 nav a:hover,
-a.nav_gamespage:hover {
+a.nav-gamespage:hover {
     text-decoration: underline;
 }
 
@@ -117,29 +117,29 @@ a.nav_gamespage:hover {
     float: right;
 }
 
-a.nav_gamespage,
-a.game_link {
+a.nav-gamespage,
+a.game-link {
     text-decoration: none;
 }
 
-li.nav_gamespage {
+li.nav-gamespage {
     margin: 0% 6%;
     padding: 8px 25px;
 }
 
 
 /* Containers for grid and flex*/
-.container_about,
-.container_checkoutsuccess,
-.order_summary,
-.checkout_container,
-.details_checkout,
-.container_grid_checkout,
-.checkout_total,
-.form_contactpage,
-.container_direct_contact,
-.container_homepage,
-.contact_info_footer,
+.container-about,
+.container-checkoutsuccess,
+.order-summary,
+.checkout-container,
+.details-checkout,
+.container-grid-checkout,
+.checkout-total,
+.form-contactpage,
+.container-direct-contact,
+.container-homepage,
+.contact-info-footer,
 .delivery-info,
 .container-gamepage,
 .container-games-page {
@@ -151,25 +151,25 @@ li.nav_gamespage {
 .row3,
 .game,
 .buttons-gamespage,
-.payment_radio,
+.payment-radio,
 .info-gamepage {
     display: flex;
 }
 
-.contact_info_footer,
-.container_direct_contact,
-.details_checkout,
+.contact-info-footer,
+.container-direct-contact,
+.details-checkout,
 .container-games-page {
     grid-template-columns: repeat(3, 1fr);
 }
 
 .container_homepage,
-.form_contactpage,
-.checkout_container,
-.container_grid_checkout,
-.checkout_total,
-.container_checkoutsuccess,
-.container_about,
+.form-contactpage,
+.checkout-container,
+.container-grid-checkout,
+.checkout-total,
+.container-checkoutsuccess,
+.container-about,
 .container-gamepage {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -183,8 +183,6 @@ li.nav_gamespage {
     flex-direction: column;
 }
 
-
-
 /* Images */
 
 .product-page-image {
@@ -194,6 +192,44 @@ li.nav_gamespage {
 .games-page-image {
     max-width: 40%;
 }
+
+/* Home Page */
+.first-section-homepage {
+    background-image: url(../images/motorcross-medium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: bottom;
+    background-position-y: top;
+    min-height: 70vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#first-section-text {
+    padding-top: 33%;
+}
+
+.container-homepage {
+    text-align: left;
+    grid-auto-rows: auto;
+    margin: 2% 4% 4%;
+    gap: 5%;
+}
+
+.game-text {
+    margin: 6%;
+}
+
+.gameimage {
+    max-width: 30%;
+    float: left;
+    margin: 2%;
+}
+
+.top-text {
+    padding-left: 5%;
+}
+
 
 /* Games page */
 
@@ -210,15 +246,51 @@ li.nav_gamespage {
 }
 
 .genre-container {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    margin: 40px;
+
 }
 
 .h2-title-games-page {
-    grid-column: span 1;
-    grid-row: span 1;
+    display: block;
 }
+
+#top-section-games-page {
+    background-image: url(../images/bluecar-medium.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: right;
+    background-position-y: bottom;
+    min-height: 50vh;
+    margin: 0% 5%;
+    padding: 5%;
+}
+
+.nav-gamespage {
+    display: inline-block;
+}
+
+.container-games-page,
+.row1,
+.row2,
+.row3,
+.game,
+.buttons-gamespage {
+    flex-direction: column;
+}
+
+.row1,
+.row2,
+.row3 {
+    flex-direction: row;
+    align-content: baseline;
+    padding-bottom: 3%;
+}
+
+
+
 
 /* Product page */
 
@@ -254,26 +326,26 @@ fieldset.game_page {
 }
 
 /* Contact Page */
-.gameimage_contact {
+.gameimage-contact {
     max-width: 30%;
     padding: 0% 32%;
 }
 
-input.contact_input,
-textarea.contact_input,
-input.checkout_page {
+input.contact-input,
+textarea.contact-input,
+input.checkout-page {
     display: block;
     margin-bottom: 5%;
 }
 
-input.contact_input,
-textarea.contact_input,
-label.contact_page {
+input.contact-input,
+textarea.contact-input,
+label.contact-page {
     margin-left: 30px;
     width: 350px;
 }
 
-.contact_info {
+.contact-info {
     margin: 3% 10%;
 }
 
@@ -283,7 +355,7 @@ label.contact_page {
     padding: 8% 5%;
 }
 
-.form_contactpage {
+.form-contactpage {
     align-items: baseline;
     padding: 2% 10%;
     gap: 3%;
@@ -298,22 +370,35 @@ label.contact_page {
     padding-left: 12%;
 }
 
-.container_direct_contact {
+.container-direct-contact {
     justify-items: center;
     margin: 2% 12%;
 }
 
-.direct_contact_header {
+.direct-contact-header {
     font-weight: lighter;
     padding-left: 5%;
     margin-bottom: 5%;
     margin-top: 0%;
 }
 
-.direct_contact_icons {
+.direct-contact-icons {
     color: var(--head_foot_blue);
 }
 
+
+/* About Page */
+.about-image {
+    max-width: 80%;
+    padding: 5%;
+    margin: 5%;
+}
+
+#about-info-text {
+    text-align: left;
+    margin: 3%;
+    padding: 8%;
+}
 
 /* Media Queries */
 /* Phone */
