@@ -1,6 +1,7 @@
 @import "buttons.css";
 @import "fonts.css";
 @import "variables.css";
+@import "error-messages.css";
 
 /* Header & Footer */
 header,
@@ -62,7 +63,8 @@ input.input-newsletter {
     padding: 10px;
 }
 
-.h1heading {
+.h1heading,
+.h1heading-homepage {
     padding: 20px;
     margin: 0% 0% 3% 0%;
 }
@@ -138,11 +140,13 @@ li.nav-gamespage {
 .checkout-total,
 .form-contactpage,
 .container-direct-contact,
-.container-homepage,
+.game-container,
 .contact-info-footer,
 .delivery-info,
 .container-gamepage,
-.container-games-page {
+.container-games-page,
+.container-index-games,
+.game-section {
     display: grid;
 }
 
@@ -158,29 +162,37 @@ li.nav-gamespage {
 
 .contact-info-footer,
 .container-direct-contact,
-.details-checkout,
-.container-games-page {
+.details-checkout {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.container_homepage,
+
 .form-contactpage,
 .checkout-container,
 .container-grid-checkout,
 .checkout-total,
 .container-checkoutsuccess,
 .container-about,
-.container-gamepage {
+.container-gamepage,
+.container-index-games {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.container-games-page {
-    grid-template-rows: repeat(3, 1fr);
-
+.container-homepage {
+    display: flex;
 }
 
 .info-gamepage {
     flex-direction: column;
+}
+
+.container-index-games {
+    grid-template-rows: auto;
+}
+
+.game-section {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
 }
 
 /* Images */
@@ -190,7 +202,13 @@ li.nav-gamespage {
 }
 
 .games-page-image {
-    max-width: 40%;
+    max-width: 60%;
+}
+
+.index-page-image {
+    max-width: 60%;
+    margin: 6%;
+    padding-top: 18px;
 }
 
 /* Home Page */
@@ -209,21 +227,20 @@ li.nav-gamespage {
     padding-top: 33%;
 }
 
-.container-homepage {
-    text-align: left;
-    grid-auto-rows: auto;
-    margin: 2% 4% 4%;
-    gap: 5%;
+
+.game-section {
+    align-items: start;
+    margin: 2%;
+    gap: 1%;
+}
+
+.game-section-info {
+    margin: 3%;
+
 }
 
 .game-text {
-    margin: 6%;
-}
-
-.gameimage {
-    max-width: 30%;
-    float: left;
-    margin: 2%;
+    margin-top: 20%;
 }
 
 .top-text {
@@ -231,30 +248,29 @@ li.nav-gamespage {
 }
 
 
+
 /* Games page */
 
 .buttons-gamespage {
-    padding-right: 5%;
-    gap: 2%;
-    flex-direction: row;
+    gap: 10%;
+    display: flex;
+    margin-right: 5%;
 }
 
 .game {
     align-items: center;
     flex-direction: column;
-    padding-bottom: 20%;
+    margin-top: 5%;
+    padding-bottom: 8%;
+    margin-right: 10%;
 }
 
 .genre-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: inherit;
-    margin: 40px;
-
 }
 
 .h2-title-games-page {
-    display: block;
+    margin-left: 50px;
 }
 
 #top-section-games-page {
@@ -271,26 +287,6 @@ li.nav-gamespage {
 .nav-gamespage {
     display: inline-block;
 }
-
-.container-games-page,
-.row1,
-.row2,
-.row3,
-.game,
-.buttons-gamespage {
-    flex-direction: column;
-}
-
-.row1,
-.row2,
-.row3 {
-    flex-direction: row;
-    align-content: baseline;
-    padding-bottom: 3%;
-}
-
-
-
 
 /* Product page */
 

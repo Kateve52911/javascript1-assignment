@@ -11,7 +11,8 @@
 .cta-gamepage,
 .cta-heart-gamespage,
 .cta-input-contactpage,
-.cta-login-contactpage {
+.cta-login-contactpage,
+.cta-homepage {
     background-color: var(--orange);
     padding: 10px;
     border-radius: 5px;
@@ -31,9 +32,8 @@
 }
 
 .cta-gamespage {
-    width: 60px;
-    display: inline;
-    margin-right: 10%;
+    width: 50px;
+    display: block;
     padding: 10% 15%;
 }
 
@@ -73,4 +73,10 @@ a.cta-input-contactpage {
 
 .cta-input-footer {
     padding: 5px;
+}
+
+.cta-homepage {
+    margin-top: 17%;
+    margin-bottom: 0%;
+    float: right;
 }

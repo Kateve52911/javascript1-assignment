@@ -20,7 +20,8 @@ a.game-link,
 a.cta-login-contactpage,
 a.cta-input-contactpage,
 .cta-discount,
-.cta {
+.cta,
+.cta-homepage {
     font-family: var(--font_family);
 }
 
@@ -44,7 +45,6 @@ a.nav-gamespage {
 }
 
 .contact-info,
-.h1heading,
 a.nav-gamespage,
 input,
 textarea,
@@ -58,7 +58,8 @@ label {
 
 
 .game-link,
-.h1heading {
+.h1heading,
+.h1heading-homepage {
     font-size: xx-large;
 }
 
@@ -102,6 +103,7 @@ footer,
 .icon-user,
 a.game-link,
 a.cta-login-contactpage,
-a.cta-input-contactpage {
+a.cta-input-contactpage,
+.cta-homepage {
     color: var(--white);
 }
