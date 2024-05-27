@@ -1,77 +1,65 @@
+import { createMessage, getGameDetails } from './utility/utils.js';
+
+const containerIndexPage = document.querySelector(".container-index-games");
+
+const subheadingMap = {
+    onSale: "On Sale:",
+    favorite: "Favorites:"
+};
+
+
+async function filterAndDisplayGames(gameData) {
+    let allGamesHTML = '';
+
+    const filteredGamesHTML = filterGames(gameData, condition);
+    allGamesHTML += addSubheading(subheadingMap[condition]) + filteredGamesHTML;
+
+    containerIndexPage.innerHTML = allGamesHTML;
+}
+
+
 function filterGames(gameData, condition) {
-    if (!condition in ["onSale", "favorite"]) {
-        console.log("Dingus")
-        throw new Error("Dingus.");
-    }
-    let filteredGamesHTML = addSubheading(condition)
+
+    let filteredGamesHTML = "";
     for (let game of gameData) {
         if (game[condition] === true) {
-            filteredGamesHTML += generateGameHTML(
-                game.image.url,
-                game.title,
-                game.description,
-                game.id
-            )
+            filteredGamesHTML += generateGameHTML(game);
         }
     }
     return filteredGamesHTML;
 }
 
-function addSubheading(subheading) {
+function generateSubheading(subheading) {
     return `<div class="genre-container">
     <h2 class="h2-title-games-page">${subheading}</h2></div>`;
 }
 
-function generateGameHTML(gameImageURL, gameTitle, gameDescription, gameID) {
+function generateGameHTML(game) {
     return `<div class="game-section">
-    <img class="index-page-image" src="${gameImageURL}" alt = "${gameTitle}">
+    <img class="index-page-image" src="${game.image.url}" alt = "${game.title}">
         <div class="game-section-info">
-            <h3 class="index-game-title">${gameTitle}</h3>
-            <p class="game-text">${gameDescription}</p>
-            <a href="product-page.html?id=${gameID}" class="cta-homepage">View</a> 
+            <h3 class="index-game-title">${game.title}</h3>
+            <p class="game-text">${game.description}</p>
+            <a href="product-page.html?id=${game.id}" class="cta-homepage">View</a> 
         </div>
     </div>
     `;
+};
+
+function generateIndexHTML(gameData, condition) {
+    return `<div class="index-section">
+        ${generateSubheading(subheadingMap[condition])}
+        <div class="games-container">
+        ${filterGames(gameData, condition)} </div>
+        </div>`;
 }
 
+const gameData = await getGameDetails();
 
-const url = "https://v2.api.noroff.dev/gamehub/";
+const messageContainer = document.querySelector(".message-container");
 
-const containerIndexPage = document.querySelector(".container-index-games");
+const message = createMessage("error", "An error has occured");
 
-async function getGamesIndexPage() {
+containerIndexPage.innerHTML += generateIndexHTML(gameData, "onSale") + generateIndexHTML(gameData, "favorite");
 
-    const response = await fetch(url);
-
-    const results = await response.json();
-
-    const gameData = results.data;
-
-    console.log(gameData);
-
-
-    containerIndexPage.innerHTML += filterGames(gameData, "onSale");
-
-
-    /* for (let i = 0; i < gameData.length; i++) {
-        if (gameData[i].favorite === true) {
-            containerIndexPage.innerHTML += generateGameHTML(
-                gameData[i].image.url,
-                gameData[i].title,
-                gameData[i].description,
-                gameData[i].id
-            ); */
-    /*             containerIndexPage.innerHTML += `<div class="game-section">
-                        <img class="index-page-image" src="${gameData[i].image.url}" alt = "${gameData[i].title}">
-                        <div class="game-section-info">
-                            <h3 class="index-game-title">${gameData[i].title}</h3>
-                            <p class="game-text">${gameData[i].description}</p>
-                            <a href="product-page.html?id=${gameData[i].id}" class="cta-homepage">View</a> 
-                        </div>
-                    </div>
-                `; */
-}
-/*     }
-}
- */
-getGamesIndexPage();
+filterAndDisplayGames(gameData);

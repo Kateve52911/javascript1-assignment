@@ -9,6 +9,14 @@ const message = createMessage("error", "An error has occured");
 
 const gameData = await getGameDetails();
 
+allGamesContainer.innerHTML = `<div class="spinner-games-page"></div>`
+
+setTimeout(function () {
+    createHTMLGamesPage(gameData);
+
+
+}, 1000, gameData)
+
 function createHTMLGamesPage(games) {
     const genres = ["Action", "Sports", "Adventure", "Horror"];
     let gamesHTML = "";
@@ -38,4 +46,3 @@ function createHTMLGamesPage(games) {
 }
 
 
-createHTMLGamesPage(gameData);

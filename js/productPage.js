@@ -5,7 +5,6 @@ const resultsContainer = document.querySelector(".game-information");
 
 const headerContainer = document.querySelector(".game-header");
 
-
 const messageContainer = document.querySelector(".message-container");
 
 const message = createMessage("error", "An error has occured");
@@ -20,7 +19,19 @@ const pageURL = "https://v2.api.noroff.dev/gamehub/" + id;
 
 const gameData = await getGameDetails(pageURL);
 
-headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
+resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
+
+
+setTimeout(function () {
+
+    resultsContainer.innerHTML = "";
+
+    headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
+
+    resultsContainer.innerHTML = createHTMLProductPage(gameData);
+
+}, 1000, gameData);
+
 
 
 function createHTMLProductPage(gameData) {
@@ -67,4 +78,4 @@ function createHTMLProductPage(gameData) {
 
 
 
-resultsContainer.innerHTML = createHTMLProductPage(gameData);
+//resultsContainer.innerHTML = createHTMLProductPage(gameData);
