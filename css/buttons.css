@@ -12,7 +12,8 @@
 .cta-heart-gamespage,
 .cta-input-contactpage,
 .cta-login-contactpage,
-.cta-homepage {
+.cta-homepage,
+.cta-delete {
     background-color: var(--orange);
     padding: 10px;
     border-radius: 5px;
@@ -42,7 +43,8 @@
 .cta-input,
 .cta-input-footer,
 .cta-heart-gamespage,
-.cta-input-contactpage {
+.cta-input-contactpage,
+.cta-delete {
     background-color: #3CAAF0;
 }
 

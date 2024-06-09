@@ -1,22 +1,18 @@
 import { createMessage, getGameDetails } from './utility/utils.js';
 
 const containerIndexPage = document.querySelector(".container-index-games");
-
 const subheadingMap = {
     onSale: "On Sale:",
     favorite: "Favorites:"
 };
 
-
 async function filterAndDisplayGames(gameData) {
     let allGamesHTML = '';
-
     const filteredGamesHTML = filterGames(gameData, condition);
     allGamesHTML += addSubheading(subheadingMap[condition]) + filteredGamesHTML;
 
     containerIndexPage.innerHTML = allGamesHTML;
-}
-
+};
 
 function filterGames(gameData, condition) {
 
@@ -24,10 +20,10 @@ function filterGames(gameData, condition) {
     for (let game of gameData) {
         if (game[condition] === true) {
             filteredGamesHTML += generateGameHTML(game);
-        }
-    }
+        };
+    };
     return filteredGamesHTML;
-}
+};
 
 function generateSubheading(subheading) {
     return `<div class="genre-container">
@@ -55,11 +51,8 @@ function generateIndexHTML(gameData, condition) {
 }
 
 const gameData = await getGameDetails();
-
 const messageContainer = document.querySelector(".message-container");
-
 const message = createMessage("error", "An error has occured");
-
 containerIndexPage.innerHTML += generateIndexHTML(gameData, "onSale") + generateIndexHTML(gameData, "favorite");
 
 filterAndDisplayGames(gameData);

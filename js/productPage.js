@@ -1,41 +1,31 @@
 import { createMessage, getGameDetails } from './utility/utils.js';
 
-
 const resultsContainer = document.querySelector(".game-information");
-
 const headerContainer = document.querySelector(".game-header");
-
 const messageContainer = document.querySelector(".message-container");
-
 const message = createMessage("error", "An error has occured");
-
 const queryString = document.location.search;
-
 const paramsProductPage = new URLSearchParams(queryString);
-
-const id = paramsProductPage.get("id")
-
+const id = paramsProductPage.get("id");
 const pageURL = "https://v2.api.noroff.dev/gamehub/" + id;
 
-const gameData = await getGameDetails(pageURL);
+async function init() {
+    const gameData = await getGameDetails(pageURL);
 
-resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
+    resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
+    setTimeout(function () {
+        resultsContainer.innerHTML = "";
+        headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
+        resultsContainer.innerHTML = createHTMLProductPage(gameData);
 
-
-setTimeout(function () {
-
-    resultsContainer.innerHTML = "";
-
-    headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
-
-    resultsContainer.innerHTML = createHTMLProductPage(gameData);
-
-}, 1000, gameData);
-
-
+        document.querySelector(".add-to-cart").addEventListener('click', () => {
+            addToShoppingCart(gameData);
+        });
+    }, 1000, gameData);
+};
 
 function createHTMLProductPage(gameData) {
-    return `<div class="container-gamepage">
+    return `<div class="container-gamepage" data-id="${gameData.id}">
                                     <img class="product-page-image " src="${gameData.image.url}" alt = "${gameData.title}">
                                     <div class="info-gamepage"> 
                                         <div><p>${gameData.genre}</p></div>
@@ -54,7 +44,7 @@ function createHTMLProductPage(gameData) {
                                         </div>
 
                                         <div class="button-boxes-product-page">
-                                            <a href="checkout.html" class="cta-gamepage">Add to cart</a>
+                                            <button type="button" class="cta-gamepage add-to-cart">Add to cart</button>
                                             <a href="contact.html" class="cta-heart"><i class="fa-solid fa-heart heart-icon-gamespage"></i></a>
                                         </div>
 
@@ -76,6 +66,12 @@ function createHTMLProductPage(gameData) {
                                     </div>`;
 }
 
+function addToShoppingCart(gameData) {
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    cart.push(gameData);
+    localStorage.setItem('shoppingCart', JSON.stringify(cart))
+};
 
+init();
 
 //resultsContainer.innerHTML = createHTMLProductPage(gameData);

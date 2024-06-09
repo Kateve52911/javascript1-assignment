@@ -21,7 +21,8 @@ a.cta-login-contactpage,
 a.cta-input-contactpage,
 .cta-discount,
 .cta,
-.cta-homepage {
+.cta-homepage,
+.shopping-cart {
     font-family: var(--font_family);
 }
 
@@ -64,7 +65,8 @@ label {
 }
 
 #first-section-text,
-#about-info-text {
+#about-info-text,
+.shopping-cart {
     font-size: large;
 }
 
@@ -104,6 +106,7 @@ footer,
 a.game-link,
 a.cta-login-contactpage,
 a.cta-input-contactpage,
-.cta-homepage {
+.cta-homepage,
+.icon-cart {
     color: var(--white);
 }
