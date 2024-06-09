@@ -70,7 +70,8 @@ input.input-newsletter {
 .topbar-homepage,
 .topbar-contactpage,
 .topbar-about,
-.h1heading {
+.h1heading,
+.h1heading-gamespage {
     background-color: var(--pale_blue);
 }
 
@@ -84,6 +85,11 @@ input.input-newsletter {
 .h1heading-homepage {
     padding: 20px;
     margin: 0% 0% 3% 0%;
+}
+
+.h1heading-gamespage {
+    padding-top: 2px;
+    padding-bottom: 0px;
 }
 
 .topbar-homepage,
@@ -144,7 +150,6 @@ li.nav-gamespage {
 .container-checkoutsuccess,
 .order-summary,
 .checkout-container,
-.details-checkout,
 .container-grid-checkout,
 .checkout-total,
 .form-contactpage,
@@ -162,6 +167,7 @@ li.nav-gamespage {
 .payment-radio,
 .info-gamepage,
 .header-flex-conatainer,
+.details-checkout,
 .cart-item {
     display: flex;
 }
@@ -172,8 +178,7 @@ li.nav-gamespage {
 }
 
 .contact-info-footer,
-.container-direct-contact,
-.details-checkout {
+.container-direct-contact {
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -193,7 +198,8 @@ li.nav-gamespage {
     display: flex;
 }
 
-.info-gamepage {
+.info-gamepage,
+.details-checkout {
     flex-direction: column;
 }
 
@@ -410,23 +416,16 @@ label.contact-page {
 
 /* Checkout Page */
 .cart-item {
-    gap: 10%;
-    padding: auto;
+    gap: 5%;
+    margin-bottom: 5%;
 }
 
 .checkout-container,
-.details-checkout,
 .container-grid-checkout,
 .checkout-total {
     grid-auto-rows: auto;
     padding: 2% 5%;
     gap: 5%;
-}
-
-.details-checkout {
-    align-items: center;
-    padding: 1% 0%;
-    gap: 1%;
 }
 
 .container-grid-checkout,
@@ -475,11 +474,12 @@ label.contact-page {
 .checkout-summary {
     background-color: var(--pale_orange);
     max-width: 600px;
-    padding: 5%;
+    padding: 10% 4%;
 }
 
 .gameimage-checkout {
     max-width: 20%;
+    margin: 5%;
 }
 
 input.cardholder {
@@ -494,7 +494,8 @@ input.discount-input {
 }
 
 .discount-container {
-    padding: 3% 2% 0%;
+    padding: 10px 80px;
+    background-color: var(--pale_orange);
 }
 
 .price-checkout,
@@ -518,6 +519,43 @@ label.radio-checkout {
 
 input.radio-checkout {
     margin-right: 4%;
+}
+
+.total-cost {
+    float: right;
+}
+
+
+/*Checkout Success */
+.container-checkoutsuccess,
+.order-summary {
+    gap: 5%;
+}
+
+.container-checkoutsuccess {
+    grid-auto-rows: auto;
+    padding: 5% 5%;
+}
+
+.checkout-container-success,
+.header-success {
+    background-color: var(--pale_orange);
+    padding: 8%;
+    margin: 0%;
+}
+
+.success-information {
+    padding: 3%;
+    padding-top: 5%;
+}
+
+.green-checksymbol {
+    max-width: 50%;
+    padding-left: 25%;
+}
+
+.order-confirmed {
+    padding-bottom: 5%;
 }
 
 /* Media Queries */
@@ -562,7 +600,7 @@ input.radio-checkout {
     .checkout-container,
     .container-gamepage,
     .games-container,
-    .container-games-page,
+    .genre-container,
     nav.links-topbar-gamespage {
         display: flex;
         flex-direction: column;
@@ -571,8 +609,9 @@ input.radio-checkout {
 
     nav.links-topbar-gamespage {
         display: inline-flex;
-        padding: 0% 27%;
+        padding: 0% 30%;
         margin-right: 2%;
+        margin-top: 50.5px;
     }
 
     .form-contactpage,
@@ -614,8 +653,7 @@ input.radio-checkout {
     }
 
     .genre-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 
     header {
@@ -623,7 +661,7 @@ input.radio-checkout {
     }
 
     .hamburger-icon {
-        margin-top: 5%;
+        margin-top: 10%;
     }
 
     /* Fonts */
@@ -664,9 +702,20 @@ input.radio-checkout {
         margin-top: 12%;
     }
 
+
+    .h2-title-games-page {
+        margin-left: -200px;
+    }
+
     /* images */
     .logo-header {
-        max-width: 30%;
+        max-width: 60%;
+        margin-left: 30%;
+        padding-top: 10%;
+    }
+
+    .icon-cart {
+        padding: 40px 0px;
     }
 
     /* Footer */
@@ -706,7 +755,7 @@ input.radio-checkout {
     }
 
     .container-games-page {
-        margin-top: 70%;
+        margin-top: 120%;
     }
 
     .game {
@@ -720,6 +769,10 @@ input.radio-checkout {
     .h2-item-topbar {
         padding: 1% 20%;
         color: var(--black);
+    }
+
+    .topbar-gamespage {
+        padding: 1px;
     }
 
     /* Contact page */
@@ -773,6 +826,12 @@ input.radio-checkout {
 
     .cta-discount {
         padding: 10px;
+    }
+
+    .gameimage-checkout {
+        padding-top: 15%;
+        height: 100px;
+        width: 100px;
     }
 
     /* Product Page */
@@ -939,7 +998,6 @@ input.radio-checkout {
 
     /* Checkout */
     .checkout-container,
-    .details-checkout,
     .container-grid-checkout,
     .checkout-total {
         padding: 3% 3%;

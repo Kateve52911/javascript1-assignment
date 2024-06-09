@@ -10,6 +10,11 @@ setTimeout(function () {
     createHTMLGamesPage(gameData);
 }, 1000, gameData)
 
+/**
+ * Creates the HTML for the page where all the games are displayed. 
+ * Creating the genre banner followed by the games of given genre.
+ * @param {*} games - the different games that are in the various categories (from the API call).
+ */
 function createHTMLGamesPage(games) {
     const genres = ["Action", "Sports", "Adventure", "Horror"];
 

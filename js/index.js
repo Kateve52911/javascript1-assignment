@@ -6,14 +6,11 @@ const subheadingMap = {
     favorite: "Favorites:"
 };
 
-async function filterAndDisplayGames(gameData) {
-    let allGamesHTML = '';
-    const filteredGamesHTML = filterGames(gameData, condition);
-    allGamesHTML += addSubheading(subheadingMap[condition]) + filteredGamesHTML;
-
-    containerIndexPage.innerHTML = allGamesHTML;
-};
-
+/**
+ * Filters games from API call and generates HTML if they match the condition. 
+ * @param {*} gameData - information from API call.
+ * @param {*} condition - metadata field to filter on. 
+ */
 function filterGames(gameData, condition) {
 
     let filteredGamesHTML = "";
@@ -38,10 +35,15 @@ function generateGameHTML(game) {
             <p class="game-text">${game.description}</p>
             <a href="product-page.html?id=${game.id}" class="cta-homepage">View</a> 
         </div>
-    </div>
-    `;
+    </div>`;
 };
 
+/**
+ * Creates the banner and filtered games for the condition.
+ * @param {*} gameData from API call.
+ * @param {*} condition - metadata field to filter on. 
+ * @returns the HTML for the banner and its games. 
+ */
 function generateIndexHTML(gameData, condition) {
     return `<div class="index-section">
         ${generateSubheading(subheadingMap[condition])}
@@ -52,7 +54,19 @@ function generateIndexHTML(gameData, condition) {
 
 const gameData = await getGameDetails();
 const messageContainer = document.querySelector(".message-container");
-const message = createMessage("error", "An error has occured");
-containerIndexPage.innerHTML += generateIndexHTML(gameData, "onSale") + generateIndexHTML(gameData, "favorite");
+const message = createMessage("error", "An issue with the metadata has occurred");
 
-filterAndDisplayGames(gameData);
+containerIndexPage.innerHTML = `<div class="spinner-games-page"></div>`
+
+setTimeout(function () {
+    try {
+        containerIndexPage.innerHTML = ""
+        containerIndexPage.innerHTML += generateIndexHTML(gameData, "onSale") + generateIndexHTML(gameData, "favorite");
+
+        filterAndDisplayGames(gameData);
+    }
+    catch (error) {
+        messageContainer.innerHTML = message;
+    }
+}, 1000)
+

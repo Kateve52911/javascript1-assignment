@@ -1,4 +1,4 @@
-import { createMessage, getGameDetails } from './utility/utils.js';
+import { createMessage, getGameDetails, getCartOrEmptyCart } from './utility/utils.js';
 
 const resultsContainer = document.querySelector(".game-information");
 const headerContainer = document.querySelector(".game-header");
@@ -9,21 +9,36 @@ const paramsProductPage = new URLSearchParams(queryString);
 const id = paramsProductPage.get("id");
 const pageURL = "https://v2.api.noroff.dev/gamehub/" + id;
 
+/**
+ * This function initialises the loading of the content onto the product page. 
+ * It uses a setTimeout function to add the content on to the webpage. 
+ * It also inclues a function to store the gamedata to the local storage for use in the shopping cart. 
+ */
 async function init() {
-    const gameData = await getGameDetails(pageURL);
+    try {
+        const gameData = await getGameDetails(pageURL);
 
-    resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
-    setTimeout(function () {
-        resultsContainer.innerHTML = "";
-        headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
-        resultsContainer.innerHTML = createHTMLProductPage(gameData);
+        resultsContainer.innerHTML = `<div class="spinner-product-page"></div>`;
+        setTimeout(function () {
+            resultsContainer.innerHTML = "";
+            headerContainer.innerHTML = `<h1 class="h1heading">${gameData.title}</h1>`
+            resultsContainer.innerHTML = createHTMLProductPage(gameData);
 
-        document.querySelector(".add-to-cart").addEventListener('click', () => {
-            addToShoppingCart(gameData);
-        });
-    }, 1000, gameData);
+            document.querySelector(".add-to-cart").addEventListener('click', () => {
+                addToShoppingCart(gameData);
+            });
+        }, 1000, gameData);
+    }
+    catch (error) {
+        messageContainer.innerHTML = message;
+    }
 };
 
+/**
+ * Creates the HTML for the product page
+ * @param {*} gameData - the results fom the call to the API
+ * @returns - the HTML for the product page. 
+ */
 function createHTMLProductPage(gameData) {
     return `<div class="container-gamepage" data-id="${gameData.id}">
                                     <img class="product-page-image " src="${gameData.image.url}" alt = "${gameData.title}">
@@ -66,8 +81,12 @@ function createHTMLProductPage(gameData) {
                                     </div>`;
 }
 
+/**
+ * Adds a game to the local storage. 
+ * @param {*} gameData - the game information from the API call. 
+ */
 function addToShoppingCart(gameData) {
-    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    let cart = getCartOrEmptyCart();
     cart.push(gameData);
     localStorage.setItem('shoppingCart', JSON.stringify(cart))
 };
