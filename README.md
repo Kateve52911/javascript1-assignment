@@ -1,6 +1,6 @@
 # Your project title
 
-![image](images/GameHub-screenshot.png)
+![image](https://github.com/Kateve52911/javascript1-assignment/blob/main/images/Gamehub-screenshot.png)
 
 I set out to create a web page to similate a page where users can buy new and used games. 
 
