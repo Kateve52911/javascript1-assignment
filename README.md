@@ -19,34 +19,26 @@ On this porject I have used HTML, CSS and Vanilla Javascript
 ## Getting Started
 
 ### Installing
+In order to run the websites locally, one can do as follows:
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
-1. Clone the repo:
+1. Clone the repo, this can be done for example, with the git command line tool (if installed):
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+gh repo clone Kateve52911/javascript1-assignment
 ```
 
-2. Install the dependencies:
+2. Install Live Server in VS Code (or equivalent if using another IDE) and then it can be run from within.
 
-```
-npm install
-```
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
+To run the app, open VS Code (or equivalent), and then right click on the ´index.html´ file and start with Live Server from the menu.
 
-To run the app, run the following commands:
 
-```bash
-npm run start
-```
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+In order to contribute, create a PR in this repo. Add @Kateve52911 as a reviewer. 
 
 ## Contact
 
